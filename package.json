@@ -4,7 +4,7 @@
   "description": "A small javascript program to import my WorldAnvil to Kanka",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel-node src/index"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Datedsandwich/KankaImport/issues"
   },
-  "homepage": "https://github.com/Datedsandwich/KankaImport#readme"
+  "type": "module",
+  "homepage": "https://github.com/Datedsandwich/KankaImport#readme",
+  "dependencies": {
+    "axios": "^0.26.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/node": "^7.16.8"
+  }
 }
