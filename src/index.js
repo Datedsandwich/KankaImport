@@ -1,5 +1,5 @@
-import * as kanka from './kanka.js'
-import * as worldAnvil from './worldanvil.js'
+import * as kanka from './utils/kanka.js'
+import * as worldAnvil from './utils/worldanvil.js'
 
 function sleep(ms) {
     return new Promise((resolve) => {
@@ -15,6 +15,8 @@ async function importSpecies() {
         await kanka.post('races', race)
         console.log(`Imported ${race.name}`)
     }
+
+    console.log('Finished Importing Races')
 }
 
 importSpecies()

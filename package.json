@@ -4,7 +4,7 @@
   "description": "A small javascript program to import my WorldAnvil to Kanka",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node src/index"
+    "import-from-world-anvil": "babel-node src/index"
   },
   "repository": {
     "type": "git",

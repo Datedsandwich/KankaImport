@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { campaignId, token } from './variables.js'
+import { campaignId, token } from '../variables.js'
 
 const axiosConfig = {
     headers: {
