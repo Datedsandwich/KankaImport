@@ -17,11 +17,22 @@
   },
   "type": "module",
   "homepage": "https://github.com/Datedsandwich/KankaImport#readme",
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "entry"
+        }
+      ]
+    ]
+  },
   "dependencies": {
     "axios": "^0.26.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
-    "@babel/node": "^7.16.8"
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11"
   }
 }
