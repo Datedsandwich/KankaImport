@@ -1,0 +1,19 @@
+{
+  "name": "kankaimport",
+  "version": "1.0.0",
+  "description": "A small javascript program to import my WorldAnvil to Kanka",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Datedsandwich/KankaImport.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Datedsandwich/KankaImport/issues"
+  },
+  "homepage": "https://github.com/Datedsandwich/KankaImport#readme"
+}
