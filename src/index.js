@@ -1,9 +1,6 @@
 import * as kanka from './kanka.js'
+import * as worldAnvil from './worldanvil.js'
 
-async function getCharacters() {
-    return kanka.get('characters')
-}
+const species = worldAnvil.getSpecies()
 
-const characters = await getCharacters()
-
-console.log(characters)
+console.log(species)
