@@ -30,9 +30,15 @@ function loadEntities() {
 }
 
 function getSpecies() {
-    const species = entities.filter(entity => entity.template === "species" || entity.template === "ethnicity").map(transformEntity)
-
-    return species
+    return entities.filter(entity => entity.template === "species" || entity.template === "ethnicity").map(transformEntity)
 }
 
-export { getSpecies, loadEntities }
+function getLocations() {
+    return entities.filter(entity => entity.template === "location" || entity.template === "settlement").map(transformEntity)
+}
+
+function getOrganisations() {
+    return entities.filter(entity => entity.template === 'organization').map(transformEntity)
+}
+
+export { getLocations, getOrganisations, getSpecies, loadEntities }

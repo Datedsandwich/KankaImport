@@ -7,18 +7,36 @@ function sleep(ms) {
     });
 }
 
+async function importEntities(uri, entities) {
+    for(const entity of entities) {
+        await sleep(2000)
+        await kanka.post(uri, entity)
+        console.log(`Imported ${entity.name}`)
+    }
+}
+
 async function importSpecies() {
     const races = worldAnvil.getSpecies()
 
-    for(const race of races) {
-        await sleep(2000)
-        await kanka.post('races', race)
-        console.log(`Imported ${race.name}`)
-    }
+    await importEntities('races', races)
 
     console.log('Finished Importing Races')
 }
 
-worldAnvil.loadEntities()
+async function importLocations() {
+    const locations = worldAnvil.getLocations()
 
-importSpecies()
+    await importEntities('locations', locations)
+
+    console.log('Finished Importing Locations')
+}
+
+async function importOrganisations() {
+    const organisations = worldAnvil.getOrganisations()
+
+    await importEntities('organisations', organisations)
+
+    console.log('Finished Importing Organisations')
+}
+
+worldAnvil.loadEntities()
