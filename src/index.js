@@ -19,4 +19,6 @@ async function importSpecies() {
     console.log('Finished Importing Races')
 }
 
+worldAnvil.loadEntities()
+
 importSpecies()

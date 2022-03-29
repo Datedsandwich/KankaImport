@@ -18,16 +18,21 @@ function formatContent(content) {
 function transformEntity(entity) {
     return {
         name: entity.title,
-        entry: formatContent(entity.content_parsed)
+        entry: formatContent(entity.content_parsed),
+        is_private: entity.state !== 'public'
     }
 }
 
-function getSpecies() {
-    const dir = `${worldAnvilExportDir}/Races and Cultures`
+let entities = []
 
-    const species = parseJsonInDirectories(dir).map(transformEntity)
+function loadEntities() {
+    entities = parseJsonInDirectories(worldAnvilExportDir)
+}
+
+function getSpecies() {
+    const species = entities.filter(entity => entity.template === "species" || entity.template === "ethnicity").map(transformEntity)
 
     return species
 }
 
-export { getSpecies }
+export { getSpecies, loadEntities }
