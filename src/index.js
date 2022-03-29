@@ -39,4 +39,14 @@ async function importOrganisations() {
     console.log('Finished Importing Organisations')
 }
 
+async function importCharacters() {
+    const characters = worldAnvil.getCharacters()
+
+    await importEntities('characters', characters)
+
+    console.log('Finished Importing Characters')
+}
+
 worldAnvil.loadEntities()
+
+importCharacters()

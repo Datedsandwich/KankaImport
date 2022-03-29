@@ -41,4 +41,8 @@ function getOrganisations() {
     return entities.filter(entity => entity.template === 'organization').map(transformEntity)
 }
 
-export { getLocations, getOrganisations, getSpecies, loadEntities }
+function getCharacters() {
+    return entities.filter(entity => entity.template === 'person').map(transformEntity)
+}
+
+export { getCharacters, getLocations, getOrganisations, getSpecies, loadEntities }
