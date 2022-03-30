@@ -8,7 +8,7 @@ function sleep(ms) {
 }
 
 async function importEntities(uri, entities) {
-    for(const entity of entities) {
+    for (const entity of entities) {
         await sleep(2000)
         await kanka.post(uri, entity)
         console.log(`Imported ${entity.name}`)
@@ -47,6 +47,28 @@ async function importCharacters() {
     console.log('Finished Importing Characters')
 }
 
-worldAnvil.loadEntities()
+async function importGenericArticles() {
+    const notes = worldAnvil.getGenericArticles()
 
-importCharacters()
+    await importEntities('notes', notes)
+
+    console.log('Finished Importing Notes')
+}
+
+async function importReports() {
+    const reports = worldAnvil.getReports()
+
+    await importEntities('journals', reports)
+
+    console.log('Finished Importing Reports')
+}
+
+async function importDocuments() {
+    const documents = worldAnvil.getDocuments()
+
+    await importEntities('notes', documents)
+
+    console.log('Finished Importing Documents')
+}
+
+worldAnvil.loadEntities()
