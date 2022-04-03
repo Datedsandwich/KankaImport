@@ -71,4 +71,12 @@ async function importDocuments() {
     console.log('Finished Importing Documents')
 }
 
+async function importItems() {
+    const items = worldAnvil.getItems()
+
+    await importEntities('items', items)
+
+    console.log('Finished Importing Items')
+}
+
 worldAnvil.loadEntities()

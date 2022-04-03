@@ -65,4 +65,8 @@ function getLandmarks() {
     return entities.filter(entity => entity.template === 'landmark').map(transformEntity)
 }
 
-export { getCharacters, getDocuments, getGenericArticles, getLandmarks, getLocations, getOrganisations, getReports, getSpecies, loadEntities }
+function getItems() {
+    return entities.filter(entity => entity.template === 'item').map(transformEntity)
+}
+
+export { getCharacters, getDocuments, getGenericArticles, getItems, getLandmarks, getLocations, getOrganisations, getReports, getSpecies, loadEntities }
